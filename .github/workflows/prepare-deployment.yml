@@ -21,11 +21,11 @@ on:
         type: string
         required: false
         default: "production"
-      deploy_provider:
-        description: "Web hosting provider (firebase or cloudflare)"
-        type: string
-        required: false
-        default: "cloudflare"
+      # deploy_provider:
+      #   description: "Web hosting provider (firebase or cloudflare)"
+      #   type: string
+      #   required: false
+      #   default: "cloudflare"
     outputs:
       repo:
         description: "Project repository"
@@ -105,7 +105,7 @@ jobs:
                 echo "✅ Valid web provider: $provider"
                 ;;
               *)
-                echo "❌ Invalid deploy_provider: $provider (must be firebase or cloudflare)"
+                echo "❌ Invalid deploy_provider: $provider (must be firebase)"
                 exit 1
                 ;;
             esac
