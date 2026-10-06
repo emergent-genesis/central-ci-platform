@@ -36,13 +36,13 @@ on:
         description: "Web hosting provider (only used when deploy target is web or all)"
         type: choice
         required: false
-        default: "cloudflare"
+        default: "firebase"
         options:
-          - cloudflare
+          # - cloudflare
           - firebase
 
       web_output_directory:
-        description: "Build output directory for Cloudflare Pages (e.g. dist, build, out)"
+        description: "Build output directory (e.g. dist, build, out)"
         type: string
         required: false
         default: "dist"
@@ -128,9 +128,9 @@ jobs:
           deploy_channel: ${{ github.event.inputs.deploy_channel }}
           channel_id: preview-${{ github.ref_name }}-${{ github.run_number }}
           admin_code: ${{ github.event.inputs.project == 'family-tree' && secrets.ADMIN_CODE || '' }}
-          cloudflare_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          cloudflare_account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          cloudflare_project_name: ${{ github.event.inputs.project }}
+          # cloudflare_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          # cloudflare_account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # cloudflare_project_name: ${{ github.event.inputs.project }}
 
   deploy-android:
     name: "🤖 Android"
