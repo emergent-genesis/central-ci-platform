@@ -21,11 +21,11 @@ on:
         type: string
         required: false
         default: "production"
-      # deploy_provider:
-      #   description: "Web hosting provider (firebase or cloudflare)"
-      #   type: string
-      #   required: false
-      #   default: "cloudflare"
+      deploy_provider:
+        description: "Web hosting provider (firebase or cloudflare)"
+        type: string
+        required: false
+        default: "cloudflare"
     outputs:
       repo:
         description: "Project repository"
